@@ -1,0 +1,463 @@
+/* assets/css/admin.css */
+
+/* Biến màu để dễ bảo trì */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --light-gray: #f5f6fa;
+    --border-gray: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+}
+
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Container chính */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Tiêu đề dashboard */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* Tab styles */
+.tab-container {
+    margin-top: 20px;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 2px solid var(--border-gray);
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 20px;
+    background: var(--light-gray);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    border-radius: 8px 8px 0 0;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    outline: none;
+}
+
+.tab-button:hover {
+    background: #e9ecef;
+}
+
+.tab-button.active {
+    background: #fff;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 -2px 5px var(--shadow-color);
+}
+
+/* Nội dung tab */
+.tab-content {
+    padding: 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Bảng dữ liệu */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.data-table th, .data-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.data-table th {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.data-table tr:nth-child(even) {
+    background: var(--light-gray);
+}
+
+.data-table tr:hover {
+    background: #e9ecef;
+    transition: background 0.3s;
+}
+
+/* Form import */
+.import-note {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    background: var(--light-gray);
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 3px solid var(--success-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-size: 16px;
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    font-size: 16px;
+    background: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input[type="file"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Nút submit */
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Kết quả thông báo */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--light-gray);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.result h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.result p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .tab-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .data-table th, .data-table td {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-buttons {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 2px;
+    }
+
+    .data-table {
+        font-size: 12px;
+    }
+
+    .data-table th, .data-table td {
+        padding: 6px 8px;
+    }
+}
+
+/* assets/css/admin.css (thêm hoặc cập nhật phần phân trang) */
+
+/* Phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.pagination-info {
+    margin-right: 15px;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.pagination-btn {
+    padding: 6px 12px;
+    background: var(--light-gray);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.pagination-btn:hover {
+    background: #e9ecef;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.pagination-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.pagination-btn.disabled {
+    background: #f5f6fa;
+    color: #999;
+    border-color: #ddd;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.pagination-btn:active:not(.disabled) {
+    transform: translateY(1px);
+}
+
+/* assets/css/admin.css (thêm vào cuối file) */
+
+/* Options xuất CSV */
+.export-options {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#exportOption {
+    padding: 8px 12px;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#exportOption:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Nút xuất CSV */
+.export-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.export-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.export-btn:active {
+    transform: translateY(0);
+}
+
+.export-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* assets/css/admin.css (thêm vào cuối file) */
+
+/* Danh sách banner */
+/* assets/css/admin.css */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+.banner-list { display: flex; flex-wrap: wrap; gap: 20px; }
+.banner-item { border: 1px solid #ddd; padding: 10px; border-radius: 8px; }
+.banner-preview { display: block; margin-bottom: 10px; }
+.submit-btn, .delete-btn, .set-default-btn { padding: 8px 16px; margin: 5px; cursor: pointer; }
+.submit-btn { background: #4CAF50; color: white; border: none; border-radius: 4px; }
+.delete-btn { background: #f44336; color: white; border: none; border-radius: 4px; }
+.set-default-btn { background: #2196F3; color: white; border: none; border-radius: 4px; }
+.error-message { color: red; }
+
+/* Form nhập liệu */
+#input-data .form-group {
+    margin-bottom: 15px;
+}
+
+#input-data .activate-btn {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#input-data .activate-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+#input-data .activate-btn:active {
+    transform: translateY(0);
+}
+
+/* Kết quả trong tab Nhập Liệu */
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--light-gray);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.banner-checkbox {
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* Nút đặt banner mặc định */
+#setDefaultBtn {
+    padding: 10px 15px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#setDefaultBtn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+#setDefaultBtn:active {
+    transform: translateY(0);
+}
+
+.banner-controls {
+    margin-top: 10px;
+}
