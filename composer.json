@@ -1,0 +1,15 @@
+{
+    "name": "senza/legithps",
+    "description": "leohps",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "leo nguyen"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
